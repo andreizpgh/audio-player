@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <img class="background" src="images/b1.jpg" alt="">
+    <img class="background" src="images/b2.png" alt="">
+    <img class="background" src="images/b3.jpg" alt="">
+    <div class="blur"></div>
+
+    <div class="container">
+
+        <div class="player">
+            <div class="cover">
+                <div class="images">
+                    <img class="coverImg" src="images/chalk-outlines.jpg" alt="First song cover">
+                    <img class="coverImg" src="images/suicide.png" alt="Second song cover">
+                    <img class="coverImg" src="images/sick-boi.jpg" alt="Third song cover">
+                </div>
+            </div>
+
+            <div class="controls">
+                <button onclick="toPrev()" class="prevButton">
+                    <img src="images/prev.svg" alt="Previous song icon">
+                </button>
+                <button onclick="playPause()" class="playButton">
+                    <img class="playImg" src="images/play.svg" alt="Play icon">
+                    <img class="pauseImg" src="images/pause.svg" alt="Pause icon">
+                </button>
+                <button onclick="toNext()" class="nextButton">
+                    <img src="images/next.svg" alt="Next song icon">
+                </button>
+            </div>
+
+            <div class="title">
+                <div class="titleText">
+                    <h1>Chalk outlines</h1>
+                    <p>Ren, CHINCHILLA</p>
+                </div>
+                <div class="titleText">
+                    <h1>Su!cide</h1>
+                    <p>Ren</p>
+                </div>
+                <div class="titleText">
+                    <h1>Sick boi</h1>
+                    <p>Ren</p>
+                </div>
+            </div>
+
+            <audio class="audio" src="audio/1.mp3"></audio>
+            <input class="range" type="range" value="0">
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer__list">
+            <p>2023</p>
+            <a href="https://rs.school/js-stage0/">
+                <img src="images/rs-logo.svg" alt="The Rolling Scopes School Logo">
+            </a>
+            <a href="https://github.com/andreizpgh">Andrei Z.</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+html {
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  height: 100dvh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -99;
+  object-fit: cover;
+  transition: 0.4s ease-in;
+  opacity: 0;
+}
+
+.blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -98;
+  backdrop-filter: blur(10px);
+}
+
+body.--0 :nth-child(1) {
+  opacity: 1;
+}
+
+body.--1 :nth-child(2) {
+  opacity: 1;
+}
+
+body.--2 :nth-child(3) {
+  opacity: 1;
+}
+
+.container {
+  width: 90%;
+  border-radius: 1rem;
+  max-width: 500px;
+  aspect-ratio: 0.75;
+  background-color: pink;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cover {
+  margin-top: 7%;
+  width: 80%;
+  aspect-ratio: 1;
+  box-shadow: 0 10px 60px rgba(255, 26, 26, 0.22);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.images {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: ease 0.4s;
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  flex: 1 0 100%;
+  object-fit: cover;
+}
+
+.cover.--0 .images {
+  transform: translateX(0);
+}
+
+.cover.--1 .images {
+  transform: translateX(-100%);
+}
+
+.cover.--2 .images {
+  transform: translateX(-200%);
+}
+
+.title {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.titleText {
+  text-align: center;
+  flex: 1 0 100%;
+  transition: ease 0.4s;
+}
+
+.title.--0 .titleText {
+  transform: translateX(0);
+}
+
+.title.--1 .titleText {
+  transform: translateX(-100%);
+}
+
+.title.--2 .titleText {
+  transform: translateX(-200%);
+}
+
+.controls {
+  margin: 5% 0 3% 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  box-shadow: 0 5px 10px rgba(255, 26, 26, 0.22);
+  cursor: pointer;
+  transition: ease-in 0.4s;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover {
+  background-color: antiquewhite;
+}
+
+button img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.prevButton,
+.nextButton {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.playButton {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.pauseImg {
+  margin: 0 auto;
+}
+
+.playButton .pauseImg {
+  display: none;
+}
+
+.playButton.--active .playImg {
+  display: none;
+}
+
+.playButton.--active .pauseImg {
+  display: block;
+}
+
+.range {
+  margin-top: 3%;
+  appearance: none;
+  width: 80%;
+  height: 6px;
+  background-color: black;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  box-shadow: 0 5px 5px rgba(255, 26, 26, 0.22);
+  transition: 0.2s ease-in-out;
+}
+
+.range::-moz-range-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  border: none;
+  box-shadow: 0 5px 5px rgba(255, 26, 26, 0.22);
+  transition: 0.2s ease-in-out;
+  outline: none;
+}
+
+.range::-webkit-slider-thumb:active {
+  box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+}
+
+.range::-webkit-slider-thumb:focus {
+  box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+}
+
+.range::-moz-range-thumb:active {
+  box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+}
+
+.range::-moz-range-thumb:focus {
+  box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+
+footer img {
+  filter: invert(100%);
+  width: 80px;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 500px;
+}
+
+.footer__list p {
+  width: 80px;
+}
+
+.footer__list :nth-child(3) {
+  width: 80px;
+}
+
+@media (max-width: 570px) {
+  html {
+    font-size: 14px;
+  }
+  .cover {
+    width: 70%;
+  }
+  button:hover {
+    background-color: white;
+  }
+}
